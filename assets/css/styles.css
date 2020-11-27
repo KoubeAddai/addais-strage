@@ -1,1 +1,114 @@
-h1 {color: red}
+html, body {
+  margin: 0;
+}
+
+
+.indexHeader h1 {
+  margin-top: 0;
+  padding-top: 32px;
+  border-top: solid 32px #2c2c2c;
+  text-align: center;
+}
+
+.indexHeader ul {
+  display: none;
+}
+
+.indexMain {
+  margin: 0;
+  padding: 8px;
+}
+.upperContentsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.upperContentsList section {
+  margin: 8px;
+  border: solid 2px #2c2c2c;
+}
+.upperContentsList section h2 {
+  margin: 0;
+  padding: 8px;
+  font-size: 1.2em;
+}
+.upperContentsList section p {
+  margin: 0;
+  padding: 8px;
+  font-size: 0.8em;
+}
+
+.upperContentsList section ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.upperContentsList section ul li {
+  position: relative;
+  height: 2em;
+}
+.upperContentsList section ul li a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 8px;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+.upperContentsList section ul li:nth-child(2n) {
+  background: #f0f0f0;
+}
+.upperContentsList section ul li:nth-child(2n+1) {
+  background: #e0e0e0;
+}
+
+.indexFooter {
+  margin: 32px 0 0;
+  padding: 8px;
+  background: #2c2c2c;
+  color: #e1e1e1;
+}
+.indexFooter section {
+  display: inline-block;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  width: 30%;
+  background: #1d1d1d;
+}
+.indexFooter section h2 {
+  margin: 0;
+  font-size: 1.0em;
+}
+.indexFooter hr {
+  margin: 8px;
+}
+
+.copyright {
+  margin: 0;
+  padding: 8px;
+  text-align: center;
+  color: #cccccc;
+}
+
+/* やっつけレスポン支部 */
+/* たぶれっと～ */
+@media screen and (max-width: 959px) {
+  .upperContentsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .indexFooter section {
+    display: block;
+    width: auto;
+}
+/* すまーとほ～ん */
+@media screen and (max-width: 480px) {
+  .upperContentsList {
+    display: block;
+  }
+}
