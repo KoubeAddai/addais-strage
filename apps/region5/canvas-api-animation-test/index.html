@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CanvasAPIのアニメーションテスト</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<script>
+  function draw() {
+    const canvas = document.getElementById("canvas");
+    if (canvas.getContext) {
+      /*Canvasが使えるなら*/
+      console.log("Canvas is available");
+      /*Canvasを画面サイズにする*/
+      const canvasW = window.innerWidth - 16;
+      const canvasH =  window.innerHeight - 16;
+      canvas.setAttribute("width", canvasW);
+      canvas.setAttribute("height",canvasH);
+      /*変数宣言*/
+      const ctx = canvas.getContext("2d");
+      let degree = 0;
+      setInterval(function(){
+        /*以下を繰り返し*/
+        ctx.save() ;
+      	ctx.beginPath () ;
+      	ctx.clearRect(0, 0, canvasW, canvasH);
+      	ctx.translate(canvasW / 2, canvasH / 2);
+      	ctx.rotate( ++degree * Math.PI / 180 );
+      	ctx.translate( -canvasW / 2, -canvasH / 2);
+      	ctx.fillStyle = "maroon";
+      	ctx.fillRect( canvasW / 2 -50, canvasH / 2 -50, 100, 100);
+      	ctx.restore();
+      }, 15);
+    } else {
+      /*Canvasが使えないなら*/
+      console.log("Canvas is not available");
+      window.alert("お使いのブラウザでは、このページのコンテンツを表示するに値せぬわ。もう少しまともでモダーンなソフトをインストールして出直してきな。");
+    }
+  }
+</script>
+<body onload="draw();">
+  <canvas id="canvas" width="375" height="667">
+    回転する図形が3つ描画されるエリア
+  </canvas>
+</body>
+</html>
