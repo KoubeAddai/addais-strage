@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>点を数えることで図形の面積を計測する</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+<body>
+  <canvas id="canvas" width="200" height="200">
+    ボタンを押すと黒または白の円が描画されるキャンバス
+  </canvas>
+  <div>
+    <form>
+      <button id="blackPen" type="button">
+        <i class="fas fa-paint-brush"></i>
+      </button>
+      <button id="whitePen" type="button">
+        <i class="fas fa-paint-brush"></i>
+      </button>
+    </form>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>黒筆 / times</th>
+          <th>白筆 / times</th>
+          <th>面積 / (px^2)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="blackTd">0</td>
+          <td id="whiteTd">0</td>
+          <td id="areaTd">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>※ キャンバスのサイズは縦横200ピクセル</p>
+  <p>※ 黒い部分の面積を測定</p>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+html, body {
+  background: #eeeeee;
+}
+#canvas {
+  display: block;
+  margin: 24px auto 16px;
+  border: solid 1px #000000;
+  background: #ffff00;
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 16px auto;
+  width: 200px;
+}
+form button {
+  display: block;
+  margin: auto;
+  width: 84px;
+  height: 40px;
+  background: #cc2222;
+}
+#blackPen i {
+  color: black;
+}
+#whitePen i {
+  color: white;
+}
+.table {
+  display: block;
+  margin: 16px auto;
+  width: 200px;
+  border: solid 1px black;
+  background: #ffffff;
+  font-size: 14px;
+}
+.table th, .table td {
+  padding: 8px 4px;
+  border: solid 1px black;
+  text-align: center;
+  font-weight: normal;
+}
+p {
+  display: block;
+  margin: 8px auto;
+  padding: 0;
+  width: 200px;
+  font-size: 12px;
+  font-style: italic;
+}
